@@ -1,0 +1,3 @@
+Meishi::Application.configure do
+	config.secret_token = '4c240c84fe00acf40fc96448cc26afbbbc1f4b99c9a4502b312dbc7c7a2788855c8262058fa4f2c9c978cc56caba2fa45578d6bb49b55ff4002a1bf6559f01ba'
+end

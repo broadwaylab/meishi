@@ -21,6 +21,7 @@ end
 group :test, :development do
   gem 'rspec-rails', '~> 2.6'
   gem 'machinist', '>= 2.0.0.beta2'
+  gem 'test-unit', '~> 3.0'
 end
 
 group :development do
@@ -33,8 +34,6 @@ group :test do
   gem 'simplecov', :require => false
   gem 'rake'
 end
-
-gem 'jquery-rails'
 
 gem 'unicorn'
 gem 'unicode_utils'
