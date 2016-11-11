@@ -38,6 +38,8 @@ group :test do
   gem 'rake'
 end
 
+gem 'jquery-rails'
+
 gem 'unicorn'
 gem 'unicode_utils'
 gem 'nokogiri'
