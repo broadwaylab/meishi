@@ -83,7 +83,7 @@ Devise.setup do |config|
 
   # Setup a pepper to generate the encrypted password.
   begin
-    config.pepper = Meishi::Application.config.devise_user_salt
+    config.pepper = 'ec>YO__Z18oJokhX6?=bEgjnLQfDNN~f}N\TBo+;]G70@Brua}2jmV:qnNNa+@MClY~IJ{H8Ei,ZT~x7n8-pvSK{cARzIPegvl,tnk1SMG,R=HO8pBqYOT)x]stFT8EQ' # Meishi::Application.config.devise_user_salt
   rescue
     unless File.basename($0) == 'rake'
       STDERR.puts "*** Could not load password salt. ***"
