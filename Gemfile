@@ -4,8 +4,6 @@ ENV['NOKOGIRI_USE_SYSTEM_LIBRARIES']='true'
 
 gem 'rails', '~> 3.2.14'
 
-gem 'sqlite3'
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -18,9 +16,15 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :production do 
+  gem 'pg'
+end
+
 group :test, :development do
   gem 'rspec-rails', '~> 2.6'
   gem 'machinist', '>= 2.0.0.beta2'
+  gem 'test-unit'
+  gem 'sqlite3'
 end
 
 group :development do
@@ -43,7 +47,7 @@ gem 'uuidtools'
 gem 'vcard', '~> 0.2.0'
 gem 'warden'
 gem 'rails_warden'
-gem 'devise'
+gem 'devise', '~> 2.0'
 gem 'dav4rack', :git => 'https://github.com/inferiorhumanorgans/dav4rack.git'
 gem 'sys-filesystem'
 
