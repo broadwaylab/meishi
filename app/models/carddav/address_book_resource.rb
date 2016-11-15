@@ -130,7 +130,7 @@ class Carddav::AddressBookResource < Carddav::AddressBookBaseResource
   prop :quota_available_bytes do
     global_limit = nil
     user_limit = nil
-    fsinfo = Sys::Filesystem.stat(Sys::Filesystem.mount_point(Rails.root))
+    fsinfo = Sys::Filesystem.stat(Sys::Filesystem.mount_point(Rails.root.join('tmp'))) # (Rails.root))
 
     # The global quota is expensive.
     case Meishi::Application.config.quota_global_limit
