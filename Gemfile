@@ -14,7 +14,6 @@ end
 group :test, :development do
   gem 'rspec-rails', '~> 2.6'
   gem 'machinist', '>= 2.0.0.beta2'
-  gem 'test-unit'
   gem 'sqlite3'
 end
 
@@ -28,6 +27,8 @@ group :test do
   gem 'simplecov', :require => false
   gem 'rake'
 end
+
+gem 'test-unit'
 
 gem 'sass-rails',   '~> 3.2.5'
 gem 'coffee-rails', '~> 3.2.1'
