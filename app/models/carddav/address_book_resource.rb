@@ -136,8 +136,7 @@ class Carddav::AddressBookResource < Carddav::AddressBookBaseResource
       Dir.mkdir(Rails.root.join('tmp'))
     end
 
-    fsinfo = Sys::Filesystem.stat(Sys::Filesystem.mount_point(Rails.root.join('tmp'))) # (Rails.root))
-
+    fsinfo = Sys::Filesystem.stat(Rails.root.join('tmp').to_s)
     # The global quota is expensive.
     case Meishi::Application.config.quota_global_limit
     when :off
