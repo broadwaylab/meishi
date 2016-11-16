@@ -130,6 +130,12 @@ class Carddav::AddressBookResource < Carddav::AddressBookBaseResource
   prop :quota_available_bytes do
     global_limit = nil
     user_limit = nil
+
+    # Create the tmp directory in production. 
+    if Rails.env.production?
+      Dir.mkdir(Rails.root.join('tmp'))
+    end
+
     fsinfo = Sys::Filesystem.stat(Sys::Filesystem.mount_point(Rails.root.join('tmp'))) # (Rails.root))
 
     # The global quota is expensive.
