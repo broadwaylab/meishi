@@ -131,10 +131,6 @@ class Carddav::AddressBookResource < Carddav::AddressBookBaseResource
     global_limit = nil
     user_limit = nil
 
-    # Create the tmp directory in production. 
-    if Rails.env.production?
-      Dir.mkdir(Rails.root.join('tmp'))
-    end
 
     fsinfo = Sys::Filesystem.stat(Rails.root.join('tmp').to_s)
     # The global quota is expensive.
