@@ -18,6 +18,9 @@ Meishi::Application.routes.draw do
 
   ## BEGIN RFC 6764
   match '/.well-known/carddav' => redirect('/carddav/'), :via => [:propfind]
+
+
+  get '/search' => 'user_search#show', :defaults => { :format => :json }
   ## END RFC 6764
 
   # TODO: Refactor these…

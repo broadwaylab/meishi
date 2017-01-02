@@ -20,6 +20,14 @@ class User < ActiveRecord::Base
          .inject(0) {|ret, field| ret += (field.name.length + field.value.length)}
   end
 
+  def self.search(email)
+    if email
+      where('email LIKE ?', "%#{email}%")
+    else
+      scoped
+    end
+  end
+
   private
 
   def generate_auth_token
