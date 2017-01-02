@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130828013545) do
+ActiveRecord::Schema.define(:version => 20170102142105) do
 
   create_table "address_books", :force => true do |t|
     t.string   "name",       :null => false
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(:version => 20130828013545) do
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
     t.integer  "quota_limit",            :default => 0
+    t.string   "auth_token"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

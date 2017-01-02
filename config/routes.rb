@@ -1,5 +1,5 @@
 Meishi::Application.routes.draw do
-  devise_for :users, :path => :user
+  devise_for :users, :path => :user, :controllers => { :sessions => :sessions }
 
   # Yeah, map this under the devise controller. Shouldn't conflict since
   # we're at user/address_books at the highest.
