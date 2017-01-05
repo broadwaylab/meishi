@@ -3,6 +3,8 @@ class Contact < ActiveRecord::Base
   has_many :fields, :dependent => :destroy
   accepts_nested_attributes_for :fields, :reject_if => lambda { |f| f[:name].blank? or f[:value].blank?}, :allow_destroy => true
 
+  has_and_belongs_to_many :users
+
   before_validation :set_uid
   after_update :clear_vcard
 
@@ -42,7 +44,6 @@ class Contact < ActiveRecord::Base
       parameters = f.params.inject({}) {|ret, param| ret[param] = f.pvalue(param); ret}
       fields.build(group: f.group, name: f.name, parameters: parameters, value: f.value)
     end
-
   end
 
   # This relies on FN existing, which it *SHOULD*
