@@ -100,17 +100,17 @@ Devise.setup do |config|
 
   # Setup a pepper to generate the encrypted password.
 
-  begin
-    config.pepper = 'ec>YO__Z18oJokhX6?=bEgjnLQfDNN~f}N\TBo+;]G70@Brua}2jmV:qnNNa+@MClY~IJ{H8Ei,ZT~x7n8-pvSK{cARzIPegvl,tnk1SMG,R=HO8pBqYOT)x]stFT8EQ' # Meishi::Application.config.devise_user_salt
-  rescue
-    unless File.basename($0) == 'rake'
-      STDERR.puts "*** Could not load password salt. ***"
-      Rails.logger.error "*** Could not load password salt. ***"
-      exit
-    end
-  end
+  # begin
+  #   config.pepper = 'ec>YO__Z18oJokhX6?=bEgjnLQfDNN~f}N\TBo+;]G70@Brua}2jmV:qnNNa+@MClY~IJ{H8Ei,ZT~x7n8-pvSK{cARzIPegvl,tnk1SMG,R=HO8pBqYOT)x]stFT8EQ' # Meishi::Application.config.devise_user_salt
+  # rescue
+  #   unless File.basename($0) == 'rake'
+  #     STDERR.puts "*** Could not load password salt. ***"
+  #     Rails.logger.error "*** Could not load password salt. ***"
+  #     exit
+  #   end
+  # end
 
-  # config.pepper = 'd2565bde46f392dedc34a3e08613762e89d65ea8b4891251a2bd6449b3cdeb242df088fafdb0e4c0afe05ffefc20a6d67134dd9ea7f4e9d4ef8a4df3e3d25b34'
+  config.pepper = 'd2565bde46f392dedc34a3e08613762e89d65ea8b4891251a2bd6449b3cdeb242df088fafdb0e4c0afe05ffefc20a6d67134dd9ea7f4e9d4ef8a4df3e3d25b34'
 
   # Send a notification email when the user's password is changed
   # config.send_password_change_notification = false
