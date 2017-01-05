@@ -24,10 +24,6 @@ group :development do
   gem 'redcarpet'
 end
 
-group :production do 
-  gem 'pg'
-end
-
 group :test do
   gem 'simplecov', :require => false
   gem 'rake'

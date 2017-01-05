@@ -6,7 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` on Rails 4+ applications as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  config.secret_key = 'db59e6573f62267ae4c50fed9388e0b17db85aa96d9a131eb30c7a3bd8a44b86983a427581c7b9f19f85b5d5cf4d73d93f9df47e77e816f7039bc50744163825'
+  # config.secret_key = 'db59e6573f62267ae4c50fed9388e0b17db85aa96d9a131eb30c7a3bd8a44b86983a427581c7b9f19f85b5d5cf4d73d93f9df47e77e816f7039bc50744163825'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -99,6 +99,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
+
   begin
     config.pepper = 'ec>YO__Z18oJokhX6?=bEgjnLQfDNN~f}N\TBo+;]G70@Brua}2jmV:qnNNa+@MClY~IJ{H8Ei,ZT~x7n8-pvSK{cARzIPegvl,tnk1SMG,R=HO8pBqYOT)x]stFT8EQ' # Meishi::Application.config.devise_user_salt
   rescue
@@ -108,6 +109,11 @@ Devise.setup do |config|
       exit
     end
   end
+
+  # config.pepper = 'd2565bde46f392dedc34a3e08613762e89d65ea8b4891251a2bd6449b3cdeb242df088fafdb0e4c0afe05ffefc20a6d67134dd9ea7f4e9d4ef8a4df3e3d25b34'
+
+  # Send a notification email when the user's password is changed
+  # config.send_password_change_notification = false
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -139,7 +145,7 @@ Devise.setup do |config|
   # config.remember_for = 2.weeks
 
   # Invalidates all the remember me tokens when the user signs out.
-  config.expire_all_remember_me_on_sign_out = true
+  # config.expire_all_remember_me_on_sign_out = true
 
   # If true, extends the user's remember period when remembered via cookie.
   # config.extend_remember_period = false
