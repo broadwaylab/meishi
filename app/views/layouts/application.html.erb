@@ -13,6 +13,8 @@
 <% if current_user %>
   <%= render :partial => 'navbar' %>
 <% end %>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 <%= yield %>
 </body>
 </html>
